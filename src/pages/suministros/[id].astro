@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { suministros } from "../../lib/mocks";
+
+const { id } = Astro.params;
+
+const suministro = suministros.filter((sum) => sum.id == id)[0];
+---
+
+<Layout title="suministro">
+    <p>{suministro.id}</p>
+</Layout>
