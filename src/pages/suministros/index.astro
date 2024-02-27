@@ -1,23 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import TableHeader from "@/components/table/TableHeader.astro";
-import { createTable } from "@tanstack/table-core";
+import { createTable, type ColumnDef } from "@tanstack/table-core";
 import type { Suministros } from "@/lib/data";
 
 const data: Suministros[] = [];
-const columns = [
-  "id",
-  "recibo",
-  "cliente",
-  "items",
-  "creado",
-  "pedido_para",
-  "rango_horario",
-  "realizado",
-  "status",
-  "total",
+const columns: ColumnDef<Suministros, any>[] = [
+  { header: "ID" },
+  { header: "Recibo" },
+  // ... other columns ...
+  { header: "Total" },
 ];
-const table = createTable({ columns, data });
+
+// Your options object should include the required properties
+const tableOptions = {
+  columns,
+  data,
+  getCoreRowModel: () => {}, // Placeholder function, replace with your implementation
+  onStateChange: () => {}, // Placeholder function, replace with your implementation
+  renderFallbackValue: () => {}, // Placeholder function, replace with your implementation
+  statets: () => {}, // Placeholder function, replace with your implementation
+};
+
+const table = createTable<Suministros>(tableOptions);
 ---
 
 <Layout title="Suministros">
