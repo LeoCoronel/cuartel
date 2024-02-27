@@ -26,7 +26,7 @@ export interface Suministros {
     id: string,
     recibo: number,
     cliente: Cliente,
-    items: Item[];
+    items: Item[],
     creado: Date,
     pedido_para: Date,
     rango_horario: string,

@@ -1,0 +1,19 @@
+---
+const headers = ["Recibo", "Realizado", "Status", "Total"];
+---
+
+<thead class='bg-slate-800"'>
+  <tr>
+    {
+      headers.map((title) => (
+        <th
+          scope="col"
+          class="px-6 py-3 text-start text-xs font-medium uppercase text-gray-400"
+        >
+          {title}
+        </th>
+      ))
+    }
+    <th scope="col" class="px-6 py-3 text-end"></th>
+  </tr>
+</thead>
